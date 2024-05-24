@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IUserRepository : IBaseRepository<User>
+    public interface IWorkExperienceRepository : IBaseRepository<WorkExperience>
     {
-        User? Get(string name);
+        WorkExperience? Get(string title);
     }
 }

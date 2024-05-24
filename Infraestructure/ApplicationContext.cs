@@ -7,6 +7,7 @@ namespace Infraestructure
     {
         public DbSet<User> Users { get; set; }
 
+        public DbSet<WorkExperience> WorkExperiences { get; set; }
 
         private readonly bool isTestingEnvironment;
 

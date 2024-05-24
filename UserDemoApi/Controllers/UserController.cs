@@ -15,10 +15,16 @@ namespace UserDemoApi.Controllers
         {
             _service = service; 
         }
-        [HttpGet("{name}")]
-        public IActionResult Get([FromRoute]string name)
+        [HttpGet("name/{name}")]
+        public IActionResult GetByName([FromRoute]string name)
         {
             return Ok(_service.Get(name));
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Get([FromRoute] int id)
+        {
+            return Ok(_service.Get(id));
         }
 
         [HttpGet]

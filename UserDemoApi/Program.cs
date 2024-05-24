@@ -18,7 +18,10 @@ builder.Configuration["ConnectionStrings:DBConnectionString"], b => b.Migrations
 
 
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<WorkExperienceService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IWorkExperienceRepository, WorkExperienceRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

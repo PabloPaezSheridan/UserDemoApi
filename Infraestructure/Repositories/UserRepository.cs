@@ -8,28 +8,16 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         private readonly ApplicationContext _context;
-        public UserRepository(ApplicationContext context)
+        public UserRepository(ApplicationContext context) : base(context)
         {
             _context = context;
         }
         public User? Get(string name)
         {
             return _context.Users.FirstOrDefault(u => u.Name == name);
-        }
-
-        public List<User> Get()
-        {
-            return _context.Users.ToList();
-        }
-
-        public int AddUser(User user)
-        {
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            return user.Id;
         }
     }
 }
